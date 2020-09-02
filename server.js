@@ -9,9 +9,11 @@ const db = mongoose.connection
 db.on('error',(error)=>console.error(error))
 db.once('open',()=>console.log('Connected to Database'))
 
+const PORT = process.env.PORT || 3000
+
 app.use(express.json())
 
 const studentsRouter = require('./routes/students')
 app.use('/students',studentsRouter)
 
-app.listen(3000, ()=> console.log('Server Started'))
+app.listen(PORT, ()=> console.log('Server Started'))
