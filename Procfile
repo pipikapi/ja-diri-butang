@@ -1,1 +1,1 @@
-start:node srv/server.js
+start:node server.js
